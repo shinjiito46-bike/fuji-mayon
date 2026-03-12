@@ -283,6 +283,11 @@ a:hover {
   text-decoration: none;
 }
 
+.lang__menu a[aria-current="page"] {
+  font-weight: 600;
+  color: var(--color-primary-dark);
+}
+
 /* --- ヒーロー --- */
 .hero {
   position: relative;
@@ -380,6 +385,16 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
+}
+
+.hero__who {
+  margin-top: var(--space-sm);
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.92);
+  line-height: var(--line-normal);
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (min-width: 640px) {
@@ -1026,6 +1041,13 @@ a:hover {
 }
 
 /* Portrait caregiver videos (testimonials section only) */
+.testimonials__intro {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+  font-style: italic;
+}
+
 .testimonials__videos {
   display: grid;
   grid-template-columns: 1fr;
@@ -1063,6 +1085,17 @@ a:hover {
 }
 
 /* --- Anti-scam trust section --- */
+.anti-scam__warn-line {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: #fef2f2;
+  border-left: 4px solid #b91c1c;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
 .anti-scam__content {
   display: grid;
   grid-template-columns: 1fr;
@@ -1303,6 +1336,19 @@ a:hover {
   width: 100%;
   height: auto;
   border-radius: var(--radius);
+}
+
+.process-applicant-note {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius);
+}
+
+.process-applicant-note p {
+  margin: 0;
 }
 
 /* --- フェーズ（応募〜就労の流れ） --- */
