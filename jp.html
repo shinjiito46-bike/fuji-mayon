@@ -65,12 +65,12 @@
         <span>フィリピン人介護人材 → 日本</span>
       </span>
     </a>
-    <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+    <button type="button" class="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="main-nav">
       <span class="nav-toggle__bar"></span>
       <span class="nav-toggle__bar"></span>
       <span class="nav-toggle__bar"></span>
     </button>
-    <nav id="main-nav" class="nav" aria-label="Main navigation">
+    <nav id="main-nav" class="nav" aria-label="メインのナビゲーション">
       <ul class="nav__list" role="list">
         <li><a href="#salary">給与</a></li>
         <li><a href="#process">流れ</a></li>
@@ -80,13 +80,13 @@
       </ul>
     </nav>
     <div class="lang">
-      <button type="button" class="lang__btn" aria-haspopup="true" aria-expanded="false" aria-label="Language">
-        <img src="flag-en.png" alt="English" width="20" height="14" loading="lazy"> EN
+      <button type="button" class="lang__btn" aria-haspopup="true" aria-expanded="false" aria-label="言語">
+        <img src="flag-en.png" alt="日本語" width="20" height="14" loading="lazy"> 日本語
       </button>
       <div class="lang__menu" role="menu">
-        <a href="index.html" role="menuitem">English</a>
-        <a href="ph.html" role="menuitem">Filipino</a>
-        <a href="jp.html" role="menuitem">日本語</a>
+        <a href="index.html" role="menuitem">英語</a>
+        <a href="ph.html" role="menuitem">フィリピン語</a>
+        <a href="jp.html" role="menuitem" aria-current="page">日本語</a>
       </div>
     </div>
   </div>
@@ -96,29 +96,35 @@
   <!-- 1. Hero -->
   <section class="hero" aria-labelledby="hero-heading">
     <div class="hero__bg">
-      <img src="Top_image2.png" alt="Filipino caregivers and care facility in Japan" width="1200" height="600" fetchpriority="high">
+      <img src="Top_image2.png" alt="フィリピン人介護人材と日本の介護施設" width="1200" height="600" fetchpriority="high">
     </div>
     <div class="hero__overlay"></div>
     <div class="container hero__content">
       <p class="hero__badge">フィリピン人介護人材のための日本就職サポート</p>
       <h1 id="hero-heading" class="hero__title">日本で介護職として働く。<br>安全で合法的なプロセス、紹介料は一切不要。</h1>
-      <p class="hero__lead">当社は日本の登録支援機関と提携しています。登録から来日後の生活まで、すべてのステップをサポートします。違法な紹介料や隠れた費用は一切ありません。</p>
+      <p class="hero__lead">日本で、より高い給与・合法的なビザサポート・安全な生活環境で働けます。</p>
       <div class="hero__actions">
-        <a href="#apply" class="btn btn--primary btn--lg">3分で無料登録</a>
-        <a href="#eligibility-check" class="btn btn--secondary btn--lg">応募条件を確認</a>
+        <a href="#eligibility-check" class="btn btn--primary btn--lg">日本で働けるかチェック</a>
+        <a href="#apply" class="btn btn--secondary btn--lg">無料登録を始める</a>
       </div>
-      <p class="hero__hint">Questions? Fill out the form below — we’ll get back to you within a few business days.</p>
+      <div class="hero-trust-row" role="list" aria-label="Trust highlights">
+        <span class="hero-trust-row__item">✓ 紹介料は一切不要</span>
+        <span class="hero-trust-row__item">✓ 日本の法律に基づく正式雇用</span>
+        <span class="hero-trust-row__item">✓ 登録支援機関と提携</span>
+      </div>
+      <p class="hero__who">Fuji-Mayonは、登録支援機関とともに、日本で合法的に働きたいフィリピン人介護人材をサポートしています。</p>
+      <p class="hero__hint">ご質問がある場合は、下のフォームからお問い合わせください。数営業日以内にご連絡します。</p>
     </div>
   </section>
 
   <!-- 2. Trust -->
-  <section class="trust-badges section-bg-white" aria-label="Why trust us">
+  <section class="trust-badges section-bg-white" aria-label="なぜ当社を信頼できるか">
     <div class="container">
       <ul class="trust-badges__list" role="list">
-        <li><span class="trust-badges__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span> 紹介料は一切不要</li>
-        <li><span class="trust-badges__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span> 日本の法律に基づく正式雇用</li>
-        <li><span class="trust-badges__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span> 登録支援機関と提携</li>
-        <li><span class="trust-badges__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span> 来日後の生活サポート</li>
+        <li><span class="trust-badges__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span> 登録された日本の支援機関</li>
+        <li><span class="trust-badges__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span> 合法的なビザ手続きサポート</li>
+        <li><span class="trust-badges__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span> 日本での住居サポート</li>
+        <li><span class="trust-badges__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span> 日本語研修サポート</li>
       </ul>
     </div>
   </section>
@@ -147,7 +153,7 @@
           <span class="salary-infographic__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6.5"/></svg></span>
           <div class="salary-infographic__content">
             <p class="salary-infographic__label">給与</p>
-            <p class="salary-infographic__value">¥180,000–220,000 <span class="salary-infographic__unit">/ month</span></p>
+            <p class="salary-infographic__value">¥180,000–220,000 <span class="salary-infographic__unit">／月</span></p>
             <p class="salary-infographic__note">初任給の目安です。施設や地域によって異なります。</p>
           </div>
         </div>
@@ -155,7 +161,7 @@
           <span class="salary-infographic__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
           <div class="salary-infographic__content">
             <p class="salary-infographic__label">住居費</p>
-            <p class="salary-infographic__value">¥20,000–25,000 <span class="salary-infographic__unit">/ month</span></p>
+            <p class="salary-infographic__value">¥20,000–25,000 <span class="salary-infographic__unit">／月</span></p>
             <p class="salary-infographic__note">2DKを2人でシェアするケースが一般的です。企業によっては家賃補助があります。</p>
           </div>
         </div>
@@ -163,7 +169,7 @@
           <span class="salary-infographic__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span>
           <div class="salary-infographic__content">
             <p class="salary-infographic__label">手取りの目安</p>
-            <p class="salary-infographic__value">¥155,000–195,000 <span class="salary-infographic__unit">/ month</span></p>
+            <p class="salary-infographic__value">¥155,000–195,000 <span class="salary-infographic__unit">／月</span></p>
             <p class="salary-infographic__note">家賃を差し引いた後の目安です。税金や保険料により実際の金額は変動します。</p>
           </div>
         </div>
@@ -172,6 +178,11 @@
         <p><strong>渡航までの期間：</strong> 面接合格後、約2.5〜4ヶ月</p>
         <p><strong>面接：</strong> フィリピンからZoomでオンライン面接</p>
       </div>
+      <div class="salary-comparison">
+        <p class="salary-comparison__row"><strong>フィリピンでの介護職の給与目安</strong><br>₱15,000–20,000／月</p>
+        <p class="salary-comparison__row"><strong>日本での介護職の給与目安</strong><br>¥180,000–220,000／月</p>
+      </div>
+      <p class="section__note">日本の介護職の給与は、フィリピンと比べて一般的に2.5〜4倍程度高い傾向があります。</p>
       <ul class="benefits-list" role="list">
         <li>日本人と同じ労働法による保護（労働時間・残業・休暇）</li>
         <li>社会保険・健康保険加入</li>
@@ -198,11 +209,24 @@
     </div>
   </section>
 
+  <!-- 3c. Basic Requirements -->
+  <section class="section section-bg-gray" aria-labelledby="basic-requirements-heading">
+    <div class="container">
+      <h2 id="basic-requirements-heading" class="section__title">基本要件</h2>
+      <ul class="benefits-list" role="list">
+        <li>介護経験がある方歓迎</li>
+        <li>基本的な英語でのコミュニケーション</li>
+        <li>日本語学習の意思</li>
+        <li>日本の就労ビザの対象となる方</li>
+      </ul>
+    </div>
+  </section>
+
   <!-- 4. Eligibility check -->
   <section id="eligibility-check" class="section section--alt" aria-labelledby="eligibility-check-heading">
     <div class="container">
       <h2 id="eligibility-check-heading" class="section__title">応募条件の簡単チェック</h2>
-      <p class="section__lead">Do you meet the basics? Tick what applies. If you’re not sure about N4, we can still advise you.</p>
+      <p class="section__lead">基本条件を満たしていますか？該当する項目を確認してください。N4レベルが不安な場合でもご相談ください。</p>
       <figure class="eligibility-section__visual">
         <img src="eligibility_section.png" alt="介護人材応募の基本条件チェック" width="640" height="360" loading="lazy">
       </figure>
@@ -228,6 +252,9 @@
       <figure class="process-section__visual">
         <img src="process_section.png" alt="登録から日本での就労開始までの8ステップ" width="720" height="400" loading="lazy">
       </figure>
+      <div class="process-applicant-note" role="note">
+        <p><strong>応募者側でお願いしていること：</strong>登録、書類提出、オンライン面接の参加、必要に応じた日本語学習の継続です。</p>
+      </div>
       <div class="phases">
         <div class="phase">
           <span class="phase__tag">フェーズ1 — フィリピン国内手続き</span>
@@ -354,22 +381,23 @@
     <div class="container">
       <h2 id="testimonials-heading" class="section__title">日本で働く介護人材の声</h2>
       <p class="section__lead">実際にこのプロセスで日本に来たフィリピン人介護人材の体験談です。</p>
-      <div class="testimonials__videos" aria-label="Portrait caregiver videos">
+      <p class="testimonials__intro">以下の方々は、このプログラムで日本で実際に働いている介護職です。</p>
+      <div class="testimonials__videos" aria-label="介護者体験談動画">
         <figure class="testimonials__video-card">
           <video class="testimonials__video" src="anna.mp4" controls preload="metadata" playsinline aria-label="Annaさんの体験談動画">
-            Your browser does not support the video tag.
+            お使いのブラウザでは動画を再生できません。
           </video>
           <figcaption class="testimonials__video-caption">Anna — 秋田で勤務、2023年</figcaption>
         </figure>
         <figure class="testimonials__video-card">
           <video class="testimonials__video" src="maly.mp4" controls preload="metadata" playsinline aria-label="Marieさんの体験談動画">
-            Your browser does not support the video tag.
+            お使いのブラウザでは動画を再生できません。
           </video>
           <figcaption class="testimonials__video-caption">Marie — 東京で勤務、2024年</figcaption>
         </figure>
         <figure class="testimonials__video-card">
           <video class="testimonials__video" src="panas.mp4" controls preload="metadata" playsinline aria-label="Criselinさんの体験談動画">
-            Your browser does not support the video tag.
+            お使いのブラウザでは動画を再生できません。
           </video>
           <figcaption class="testimonials__video-caption">Criselin — 埼玉で勤務、2024年</figcaption>
         </figure>
@@ -384,12 +412,13 @@
   <section id="anti-scam" class="section anti-scam" aria-labelledby="anti-scam-heading">
     <div class="container">
       <h2 id="anti-scam-heading" class="section__title">違法ブローカーに注意</h2>
-      <p class="section__lead">Work with a legal, transparent process. Here’s what to look for.</p>
+      <p class="section__lead">合法的で透明な手続きで進めることが重要です。注意すべき点はこちらです。</p>
+      <p class="anti-scam__warn-line">仕事や契約が決まる前に金銭を要求する場合は注意してください。正当な紹介では費用はかかりません。</p>
       <div class="anti-scam__content">
         <div class="anti-scam__box anti-scam__box--warn">
           <h3>要注意ポイント</h3>
           <ul>
-            <li>Anyone asking for placement fee or “processing fee” before you get a job</li>
+            <li>仕事が決まる前に紹介料や「手続き費用」を請求する</li>
             <li>契約条件が曖昧または不明確</li>
             <li>誰が何を担当するか（紹介者・雇用主・登録支援機関）の説明がない</li>
             <li>急いで支払いや契約を迫る</li>
@@ -462,14 +491,14 @@
           <dt class="faq__q">
             <button type="button" class="faq__trigger" aria-expanded="false" aria-controls="faq-a8" id="faq-q8">契約トラブルがあった場合、誰が助けてくれますか？</button>
           </dt>
-          <dd class="faq__a" id="faq-a8" aria-labelledby="faq-q8" hidden>The Association gives one-on-one support. You don’t handle problems alone.</dd>
+          <dd class="faq__a" id="faq-a8" aria-labelledby="faq-q8" hidden>登録支援機関が個別にサポートします。一人で対応する必要はありません。</dd>
         </div>
       </dl>
     </div>
   </section>
 
   <!-- FAQ CTA -->
-  <section class="faq-cta" aria-label="Apply after FAQ">
+  <section class="faq-cta" aria-label="FAQ後の申し込み">
     <div class="container container--narrow">
       <p class="faq-cta__title">まだ興味がありますか？</p>
       <p class="faq-cta__actions">
@@ -482,23 +511,23 @@
   <section id="apply" class="cta-section" aria-labelledby="apply-heading">
     <div class="container">
       <h2 id="apply-heading" class="cta-section__title">3分で無料登録</h2>
-      <p class="cta-section__lead">Fill out the form below. We’ll contact you by phone or email. No placement fee. No obligation.</p>
+      <p class="cta-section__lead">下のフォームに入力してください。電話またはメールでご連絡します。紹介料は一切かかりません。無理な勧誘もありません。</p>
       <div class="cta-section__choices">
         <a href="#form" class="btn btn--primary btn--lg">応募フォームへ進む</a>
       </div>
       <div id="form" class="form-embed">
         <iframe
           src="https://docs.google.com/forms/d/e/1FAIpQLSeoqN5JmOo_KHwmzlBVMz3oZ9WQPhHL9FKtv0Wb22SOZKOH3g/viewform?embedded=true"
-          title="Fuji-Mayon application form"
+          title="Fuji-Mayon 応募フォーム"
           width="100%"
           height="1500">
-          Loading form…
+          フォームを読み込み中…
         </iframe>
       </div>
       <p class="cta-section__hint">送信いただいた情報は、Fuji-Mayonからの連絡と応募手続きのためだけに使用します。</p>
       <div class="bottom-cta">
         <p class="bottom-cta__title">日本での新しいキャリアを始めませんか？</p>
-        <p class="bottom-cta__text">Apply in 3 minutes. We’ll get back to you within a few business days.</p>
+        <p class="bottom-cta__text">まずは無料登録から。数営業日以内にご連絡します。</p>
         <a href="#form" class="btn btn--primary btn--lg">3分で無料登録</a>
       </div>
     </div>
@@ -512,14 +541,14 @@
       <div class="footer__block">
         <h4 class="footer__title">Fuji-Mayon Inc.（採用窓口）</h4>
         <p><strong>連絡先：</strong> Jhune Orozco<br>
-        #8 Road 5bgy Bagong Pagasa, Quezon City 1105, Philippines<br>
+        フィリピン ケソン市1105、#8 Road 5bgy Bagong Pagasa<br>
         <a href="mailto:manager@fuji-mayon.com">manager@fuji-mayon.com</a><br>
         <strong>受付時間：</strong> 平日 9:00〜17:00</p>
       </div>
       <div class="footer__block">
         <h4 class="footer__title">一般社団法人国際人材支援協会</h4>
         <p>日本側パートナー機関。<br><strong>登録支援機関</strong>（日本政府登録）。<br>
-        Fukaya City, Saitama Prefecture, Japan<br>
+        日本 埼玉県深谷市<br>
         <a href="mailto:webknock@jinzai-shien.org">webknock@jinzai-shien.org</a></p>
       </div>
     </div>
@@ -532,7 +561,7 @@
 <script>
 (function(){
   var nav=document.getElementById('main-nav'), toggle=document.querySelector('.nav-toggle'), lang=document.querySelector('.lang'), langBtn=document.querySelector('.lang__btn');
-  if(toggle&&nav){ toggle.addEventListener('click',function(){ var on=!nav.classList.contains('is-open'); nav.classList.toggle('is-open',on); toggle.setAttribute('aria-expanded',on?'true':'false'); toggle.setAttribute('aria-label',on?'Close menu':'Open menu'); if(lang&&on)lang.classList.remove('is-open'); }); }
+  if(toggle&&nav){ toggle.addEventListener('click',function(){ var on=!nav.classList.contains('is-open'); nav.classList.toggle('is-open',on); toggle.setAttribute('aria-expanded',on?'true':'false'); toggle.setAttribute('aria-label',on?'メニューを閉じる':'メニューを開く'); if(lang&&on)lang.classList.remove('is-open'); }); }
   if(langBtn&&lang){ langBtn.addEventListener('click',function(e){ e.stopPropagation(); var on=!lang.classList.toggle('is-open'); langBtn.setAttribute('aria-expanded',on?'true':'false'); }); document.addEventListener('click',function(){ lang.classList.remove('is-open'); if(langBtn)langBtn.setAttribute('aria-expanded','false'); }); }
   document.querySelectorAll('a[href^="#"]').forEach(function(a){ var id=a.getAttribute('href'); if(id==='#')return; var el=document.querySelector(id); if(!el)return; a.addEventListener('click',function(e){ e.preventDefault(); var h=document.querySelector('.header'); var y=el.getBoundingClientRect().top+window.pageYOffset-(h?h.offsetHeight:0); window.scrollTo({top:y,behavior:'smooth'}); if(nav&&nav.classList.contains('is-open')&&toggle){ nav.classList.remove('is-open'); toggle.setAttribute('aria-expanded','false'); } }); });
   // FAQ accordion
