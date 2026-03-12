@@ -112,10 +112,23 @@ a:hover {
 }
 
 .logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-xs);
   font-size: var(--text-lg);
   font-weight: 700;
   color: var(--color-primary-dark);
   line-height: var(--line-tight);
+}
+
+.logo__mark {
+  flex-shrink: 0;
+}
+
+.logo__text {
+  display: flex;
+  flex-direction: column;
 }
 
 .logo span {
@@ -174,19 +187,38 @@ a:hover {
   gap: var(--space-xs);
 }
 
-.nav a {
+/* Mobile: full-text links only; hide icons and desktop-only elements */
+.nav__icon,
+.nav__label--short,
+.nav__helper {
+  display: none;
+}
+
+.nav__label--full {
+  display: inline;
+}
+
+.nav a,
+.nav__link {
   display: block;
   padding: var(--space-sm);
   font-size: var(--text-base);
   font-weight: 500;
   color: var(--color-text);
+  text-decoration: none;
 }
 
-.nav a:hover {
+.nav a:hover,
+.nav__link:hover {
   color: var(--color-primary-dark);
   text-decoration: none;
   background: var(--color-bg);
   border-radius: var(--radius);
+}
+
+.nav__link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 .nav__cta {
@@ -249,6 +281,11 @@ a:hover {
 .lang__menu a:hover {
   background: var(--color-bg);
   text-decoration: none;
+}
+
+.lang__menu a[aria-current="page"] {
+  font-weight: 600;
+  color: var(--color-primary-dark);
 }
 
 /* --- ヒーロー --- */
@@ -334,6 +371,41 @@ a:hover {
   text-decoration: none;
 }
 
+.hero-trust-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: var(--line-normal);
+}
+
+.hero-trust-row__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.hero__who {
+  margin-top: var(--space-sm);
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.92);
+  line-height: var(--line-normal);
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .hero-trust-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-sm);
+  }
+}
+
 /* --- ボタン --- */
 .btn {
   display: inline-flex;
@@ -358,12 +430,14 @@ a:hover {
   background: var(--color-primary);
   color: var(--color-white);
   border-color: var(--color-primary);
+  box-shadow: 0 2px 6px rgba(26, 111, 180, 0.3);
 }
 
 .btn--primary:hover {
   background: var(--color-primary-dark);
   border-color: var(--color-primary-dark);
   color: var(--color-white);
+  box-shadow: 0 4px 10px rgba(15, 77, 130, 0.35);
 }
 
 .btn--secondary {
@@ -387,20 +461,6 @@ a:hover {
 .btn--outline:hover {
   background: var(--color-primary-bg);
   color: var(--color-primary-dark);
-}
-
-/* WhatsApp brand CTA (hero secondary) */
-.btn--wa {
-  background: #25D366;
-  color: var(--color-white);
-  border-color: #25D366;
-}
-
-.btn--wa:hover {
-  background: #20bd5a;
-  border-color: #20bd5a;
-  color: var(--color-white);
-  text-decoration: none;
 }
 
 .btn--lg {
@@ -473,11 +533,18 @@ a:hover {
 }
 
 .trust-badges__icon {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--color-primary);
+}
+
+.trust-badges__icon svg {
+  width: 20px;
+  height: 20px;
 }
 
 /* --- No Placement Fee ハイライトボックス --- */
@@ -544,6 +611,52 @@ a:hover {
   background: var(--color-white);
 }
 
+/* --- Photo sections (Workplace, Accommodation, Life in Japan) --- */
+.photo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  margin-bottom: 0;
+}
+
+.photo-grid__item {
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.photo-grid__item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-grid__item figcaption {
+  padding: var(--space-sm);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  background: var(--color-white);
+  min-height: 4.25em;
+}
+
+@media (min-width: 640px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .photo-grid--single {
+    grid-template-columns: 1fr;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 /* --- Bottom CTA（フォーム下） --- */
 .bottom-cta {
   margin-top: var(--space-2xl);
@@ -564,49 +677,6 @@ a:hover {
   font-size: var(--text-sm);
   color: var(--color-text-muted);
   margin-bottom: var(--space-md);
-}
-
-/* --- WhatsApp floating CTA (bottom right, all pages, mobile-friendly) --- */
-.wa-float {
-  position: fixed;
-  bottom: calc(var(--space-lg) + env(safe-area-inset-bottom, 0px));
-  right: calc(var(--space-lg) + env(safe-area-inset-right, 0px));
-  z-index: 90;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 56px;
-  min-height: 56px;
-  width: 56px;
-  height: 56px;
-  padding: 0;
-  background: #25D366;
-  color: var(--color-white);
-  border-radius: 50%;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-  text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.wa-float:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  color: var(--color-white);
-  text-decoration: none;
-}
-
-.wa-float:focus-visible {
-  outline: 2px solid #25D366;
-  outline-offset: 3px;
-}
-
-.wa-float__icon {
-  font-size: 0;
-  line-height: 0;
-  width: 32px;
-  height: 32px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/%3E%3C/svg%3E") no-repeat center;
-  background-size: 28px 28px;
 }
 
 /* --- 信頼インジケーター（旧・参照用に残す） --- */
@@ -682,12 +752,53 @@ a:hover {
   background: var(--color-bg-alt);
 }
 
+/* Section background rhythm: white → light gray → white → light blue */
+.section-bg-white {
+  background: var(--color-white);
+}
+.section-bg-gray {
+  background: var(--color-bg-alt);
+}
+.section-bg-blue {
+  background: var(--color-primary-bg);
+}
+
+/* Video section: responsive 16:9 embed */
+.video-section__wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  margin: var(--space-lg) 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--color-bg);
+}
+.video-section__iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .section__title {
   font-size: var(--text-xl);
   font-weight: 700;
   color: var(--color-text);
   margin-bottom: var(--space-sm);
   line-height: var(--line-tight);
+  padding-bottom: var(--space-xs);
+}
+
+.section__title::after {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 3px;
+  margin-top: var(--space-xs);
+  background: var(--color-primary);
+  border-radius: 1px;
 }
 
 .section__lead {
@@ -702,10 +813,145 @@ a:hover {
   margin-top: var(--space-xl);
 }
 
+.faq-cta {
+  padding: var(--space-xl) var(--space-sm);
+  text-align: center;
+  background: var(--color-bg);
+}
+
+.faq-cta__title {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.faq-cta__actions {
+  margin: 0;
+}
+
 .section__note {
   font-size: var(--text-sm);
   color: var(--color-text-muted);
   margin-top: var(--space-sm);
+}
+
+/* --- Salary section visual --- */
+.salary-section__visual {
+  margin: 0 auto var(--space-xl);
+  max-width: 720px;
+}
+
+.salary-section__visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+/* --- Salary infographic --- */
+.salary-infographic {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.salary-infographic__item {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+  padding: var(--space-lg);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.salary-infographic__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius);
+  background: var(--color-primary-bg);
+  color: var(--color-primary-dark);
+}
+
+.salary-infographic__icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.salary-infographic__content {
+  min-width: 0;
+}
+
+.salary-infographic__label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xs);
+}
+
+.salary-infographic__value {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.salary-infographic__unit {
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.salary-infographic__note {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: var(--line-normal);
+}
+
+.salary-extra {
+  padding: var(--space-md);
+  background: var(--color-bg);
+  border-radius: var(--radius);
+  margin-bottom: var(--space-xl);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-normal);
+}
+
+.salary-extra p {
+  margin: 0 0 var(--space-xs);
+}
+
+.salary-extra p:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 640px) {
+  .salary-infographic {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --- Eligibility section visual --- */
+.eligibility-section__visual {
+  margin: 0 auto var(--space-xl);
+  max-width: 640px;
+}
+
+.eligibility-section__visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
 }
 
 /* --- Quick eligibility check --- */
@@ -797,7 +1043,62 @@ a:hover {
   margin: 0;
 }
 
+/* Portrait caregiver videos (testimonials section only) */
+.testimonials__intro {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+  font-style: italic;
+}
+
+.testimonials__videos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.testimonials__video-card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonials__video {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: var(--radius);
+  background: var(--color-bg);
+}
+
+.testimonials__video-caption {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-sm);
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .testimonials__videos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 /* --- Anti-scam trust section --- */
+.anti-scam__warn-line {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: #fef2f2;
+  border-left: 4px solid #b91c1c;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
 .anti-scam__content {
   display: grid;
   grid-template-columns: 1fr;
@@ -984,6 +1285,24 @@ a:hover {
 }
 
 /* --- メリットリスト --- */
+.salary-comparison {
+  background: var(--color-bg-alt);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius);
+  margin-bottom: var(--space-lg);
+}
+
+.salary-comparison__row {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-normal);
+  margin-bottom: var(--space-xs);
+}
+
+.salary-comparison__row:last-child {
+  margin-bottom: 0;
+}
+
 .benefits-list {
   list-style: none;
   margin-bottom: var(--space-xl);
@@ -1007,6 +1326,32 @@ a:hover {
   height: 6px;
   border-radius: 50%;
   background: var(--color-primary);
+}
+
+/* --- Process section visual --- */
+.process-section__visual {
+  margin: 0 auto var(--space-xl);
+  max-width: 720px;
+}
+
+.process-section__visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+.process-applicant-note {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius);
+}
+
+.process-applicant-note p {
+  margin: 0;
 }
 
 /* --- フェーズ（応募〜就労の流れ） --- */
@@ -1033,6 +1378,23 @@ a:hover {
   background: var(--color-primary-bg);
   color: var(--color-primary-dark);
   margin-bottom: var(--space-md);
+}
+
+.phase__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--space-sm);
+  border-radius: var(--radius);
+  background: var(--color-primary-bg);
+  color: var(--color-primary-dark);
+}
+
+.phase__icon svg {
+  width: 32px;
+  height: 32px;
 }
 
 .phase__title {
@@ -1221,19 +1583,6 @@ a:hover {
   margin-bottom: var(--space-sm);
 }
 
-.cta-section__choices-or {
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  font-weight: 500;
-}
-
-.cta-section__wa-hint {
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-xl);
-  line-height: var(--line-normal);
-}
-
 .cta-section__what-next {
   padding: var(--space-lg);
   background: var(--color-primary-bg);
@@ -1287,6 +1636,23 @@ a:hover {
   background: var(--color-white);
 }
 
+.footer__brand {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-xl);
+  text-align: center;
+}
+
+.footer__brand a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.footer__brand a:hover {
+  text-decoration: underline;
+}
+
 .footer__grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -1311,6 +1677,12 @@ a:hover {
   font-size: var(--text-xs);
   color: var(--color-text-soft);
   line-height: var(--line-normal);
+}
+
+.footer__mark {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* --- ユーティリティ --- */
@@ -1344,11 +1716,80 @@ a:hover {
   .nav__list {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: var(--space-xs);
+    align-items: center;
+    gap: 0;
   }
 
-  .nav a {
+  /* Desktop: compact icon + short label; hide full label */
+  .nav__icon,
+  .nav__label--short {
+    display: inline-flex;
+  }
+  .nav__icon {
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    transition: color 0.15s ease;
+  }
+  .nav__label--full {
+    display: none;
+  }
+
+  .nav__item {
+    position: relative;
+  }
+
+  .nav a,
+  .nav__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
     padding: var(--space-xs) var(--space-sm);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-text);
+    border-radius: var(--radius);
+    transition: color 0.15s ease, background 0.15s ease;
+  }
+  .nav a:hover .nav__icon,
+  .nav__link:hover .nav__icon,
+  .nav a:focus-visible .nav__icon,
+  .nav__link:focus-visible .nav__icon {
+    color: var(--color-primary);
+  }
+
+  /* Helper tooltip: visible on hover/focus */
+  .nav__helper {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%) translateY(4px);
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.15s ease, visibility 0.15s ease;
+    z-index: 101;
+  }
+  .nav a:hover .nav__helper,
+  .nav__link:hover .nav__helper,
+  .nav a:focus-visible .nav__helper,
+  .nav__link:focus-visible .nav__helper {
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav__cta .nav__helper {
+    color: var(--color-primary-dark);
   }
 
   .trust__grid {
