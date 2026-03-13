@@ -309,42 +309,15 @@ a:hover {
   object-position: center 40%;
 }
 
-/* スマホ: 画像の横幅を表示幅の基準に（大きすぎる表示を抑える） */
+/* スマホ: ヒーロー高さとクロップ位置のみ調整（背景スタイル・cover は維持） */
 @media (max-width: 639px) {
   .hero {
-    min-height: 0;
-    display: block;
-  }
-
-  .hero__bg {
-    position: relative;
-    inset: auto;
-    width: 100%;
+    min-height: 56vh;
   }
 
   .hero__bg img {
-    width: 100%;
-    height: auto;
-    max-height: none;
-    object-fit: contain;
-    object-position: center top;
-    display: block;
-    vertical-align: bottom;
-  }
-
-  .hero__overlay {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-  }
-
-  .hero__content {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    object-fit: cover;
+    object-position: 68% 35%;
   }
 }
 
