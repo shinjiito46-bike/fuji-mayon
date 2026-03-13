@@ -309,6 +309,18 @@ a:hover {
   object-position: center 40%;
 }
 
+/* スマホ: ヒーロー高さとクロップ位置のみ調整（背景スタイル・cover は維持） */
+@media (max-width: 639px) {
+  .hero {
+    min-height: 56vh;
+  }
+
+  .hero__bg img {
+    object-fit: cover;
+    object-position: 68% 35%;
+  }
+}
+
 .hero__overlay {
   position: absolute;
   inset: 0;
