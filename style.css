@@ -309,30 +309,16 @@ a:hover {
   object-position: center 40%;
 }
 
-/* スマホ: ヒーローをコンパクトに・クロップ位置調整（背景スタイル・cover は維持） */
+/* スマホ: ヒーロー高さをビューポート基準に固定 */
 @media (max-width: 639px) {
   .hero {
-    min-height: auto;
-    padding-top: var(--space-lg);
-    padding-bottom: var(--space-lg);
+    height: 58vh;
+    min-height: unset;
   }
 
   .hero__bg img {
     object-fit: cover;
-    object-position: 78% 25%;
-  }
-
-  .hero__title {
-    font-size: 2rem;
-  }
-
-  .hero__lead {
-    font-size: 1rem;
-    margin-bottom: var(--space-lg);
-  }
-
-  .hero__actions {
-    gap: var(--space-sm);
+    object-position: 75% 30%;
   }
 }
 
